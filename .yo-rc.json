@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.segware.upvotes",
+      "nativeLanguage": "pt-br"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "upvotes",
+    "packageName": "com.segware.upvotes",
+    "packageFolder": "com/segware/upvotes",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YTRiOWViM2ZjOWFiZDUwM2M0ODY4MDE5YzA2MDU0NmYzOGY0YmEzMTE3ZjE1NGM2OWU1N2ZlNDhiZjRhOTgxNzQxMmQzM2I4MjVhYjdlNDJkNmU3MzI5NzIxNWIwYjNhMTczNGQ4YWM2NTZiODg1NTFlZjYyYjQ1ZjViNzY3MmE=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": ["pt-br"]
+  }
+}
