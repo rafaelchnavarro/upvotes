@@ -20,8 +20,6 @@ import { UpvotesEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
-import { UpvoteButtonComponent } from './shared/upvote-button/upvote-button.component';
-import { UpvoteService } from './shared/upvote-button/upvote.service';
 
 @NgModule({
   imports: [
@@ -42,15 +40,7 @@ import { UpvoteService } from './shared/upvote-button/upvote.service';
     UpvotesEntityModule,
     UpvotesAppRoutingModule
   ],
-  declarations: [
-    JhiMainComponent,
-    NavbarComponent,
-    ErrorComponent,
-    PageRibbonComponent,
-    ActiveMenuDirective,
-    FooterComponent,
-    UpvoteButtonComponent
-  ],
+  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

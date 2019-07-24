@@ -2,7 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JhiLanguageService } from 'ng-jhipster';
 import { JhiLanguageHelper } from 'app/core';
-
+import { UpvoteButtonComponent } from '../../shared/upvote-button/upvote-button.component';
+import { UpvoteService } from '../../shared/upvote-button/upvote.service';
 import { UpvotesSharedModule } from 'app/shared';
 import {
   UpvotesComponent,
@@ -23,10 +24,11 @@ const ENTITY_STATES = [...upvotesRoute, ...upvotesPopupRoute];
     UpvotesDetailComponent,
     UpvotesUpdateComponent,
     UpvotesDeleteDialogComponent,
-    UpvotesDeletePopupComponent
+    UpvotesDeletePopupComponent,
+    UpvoteButtonComponent
   ],
   entryComponents: [UpvotesComponent, UpvotesUpdateComponent, UpvotesDeleteDialogComponent, UpvotesDeletePopupComponent],
-  providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }],
+  providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }, UpvoteService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UpvotesUpvotesModule {
