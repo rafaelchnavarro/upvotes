@@ -1,0 +1,22 @@
+{
+  "upvotesApp": {
+    "upvotes": {
+      "home": {
+        "title": "Upvotes",
+        "createLabel": "Criar novo Upvotes",
+        "createOrEditLabel": "Criar ou editar Upvotes",
+        "notFound": "Nenhum Upvotes encontrado"
+      },
+      "created": "Um novo Upvotes foi criado com o identificador {{ param }}",
+      "updated": "Um Upvotes foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Upvotes foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Upvotes {{ id }}?"
+      },
+      "detail": {
+        "title": "Upvotes"
+      },
+      "message": "Message"
+    }
+  }
+}
