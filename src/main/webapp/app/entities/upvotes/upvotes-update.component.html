@@ -11,8 +11,8 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="upvotesApp.upvotes.message" for="field_message">Message</label>
-                    <input type="text" class="form-control" name="message" id="field_message"
-                           formControlName="message"/>
+                    <input type="text" class="form-control" name="message" id="field_message" formControlName="message"/>
+
                     <div *ngIf="editForm.get('message').invalid && (editForm.get('message').dirty || editForm.get('message').touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('message').errors.required" jhiTranslate="entity.validation.required">
