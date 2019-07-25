@@ -23,6 +23,10 @@ public class Upvotes implements Serializable {
     @Column(name = "message", length = 250, nullable = false)
     private String message;
 
+    @Size(min = 1, max = 250)
+    @Column(name = "vote", length = 250, nullable = false)
+    private Long vote;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -36,15 +40,22 @@ public class Upvotes implements Serializable {
         return message;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Long getVote() { return vote; }
+
+    public void setVote(Long vote) { this.vote = vote; }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     public Upvotes message(String message) {
         this.message = message;
         return this;
     }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

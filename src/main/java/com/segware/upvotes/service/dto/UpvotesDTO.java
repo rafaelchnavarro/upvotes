@@ -14,6 +14,7 @@ public class UpvotesDTO implements Serializable {
     @Size(min = 1, max = 250)
     private String message;
 
+    private Long vote;
 
     public Long getId() {
         return id;
@@ -30,6 +31,10 @@ public class UpvotesDTO implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public Long getVote() { return vote; }
+
+    public void setVote(Long vote) { this.vote = vote; }
 
     @Override
     public boolean equals(Object o) {

@@ -24,9 +24,9 @@
             </thead>
             <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
             <tr *ngFor="let upvotes of upvotes ;trackBy: trackId">
-                <td><a [routerLink]="['/upvotes', upvotes.id, 'view' ]">{{upvotes.id}}</a></td>
+                <td><a [routerLink]="['/upvotes', upvotes.vote, 'view' ]">{{upvotes.id}}</a></td>
                 <td>{{upvotes.message}}</td>
-                <upvote-button [itemId]='1' [userId]='2'></upvote-button>
+                <upvote-button [votes]='upvotes.vote' [userId]='2'></upvote-button>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
