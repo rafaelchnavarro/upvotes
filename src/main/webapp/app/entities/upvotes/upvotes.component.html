@@ -26,7 +26,7 @@
             <tr *ngFor="let upvotes of upvotes ;trackBy: trackId">
                 <td><a [routerLink]="['/upvotes', upvotes.vote, 'view' ]">{{upvotes.id}}</a></td>
                 <td>{{upvotes.message}}</td>
-                <upvote-button [votes]='upvotes.vote' [userId]='2'></upvote-button>
+                <upvote-button [votes]='upvotes.vote' [messageId]='upvotes.id'></upvote-button>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

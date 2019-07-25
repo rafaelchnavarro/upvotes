@@ -16,7 +16,8 @@
       "detail": {
         "title": "Upvotes"
       },
-      "message": "Message"
+      "message": "Message",
+      "vote": "Voto"
     }
   }
 }

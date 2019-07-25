@@ -15,7 +15,8 @@ export class UpvotesUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    message: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(250)]]
+    message: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(250)]],
+    vote: []
   });
 
   constructor(protected upvotesService: UpvotesService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
@@ -30,7 +31,8 @@ export class UpvotesUpdateComponent implements OnInit {
   updateForm(upvotes: IUpvotes) {
     this.editForm.patchValue({
       id: upvotes.id,
-      message: upvotes.message
+      message: upvotes.message,
+      vote: upvotes.vote
     });
   }
 
@@ -52,7 +54,8 @@ export class UpvotesUpdateComponent implements OnInit {
     return {
       ...new Upvotes(),
       id: this.editForm.get(['id']).value,
-      message: this.editForm.get(['message']).value
+      message: this.editForm.get(['message']).value,
+      vote: this.editForm.get(['vote']).value
     };
   }
 

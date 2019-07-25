@@ -7,7 +7,7 @@ import { sum, values } from 'lodash';
   styleUrls: ['./upvote-button.component.scss']
 })
 export class UpvoteButtonComponent implements OnInit, OnDestroy {
-  @Input() userId;
+  @Input() messageId;
   @Input() votes;
 
   voteCount: number = 0;
@@ -24,15 +24,15 @@ export class UpvoteButtonComponent implements OnInit, OnDestroy {
   upvote() {
     let vote = this.userVote == 1 ? 0 : 1;
     this.voteCount = this.voteCount + vote;
-    console.log(vote);
-    this.upvoteService.updateUserVote(this.votes, this.userId, vote);
+
+    this.upvoteService.updateUserVote(this.votes, this.messageId, this.voteCount);
   }
 
   downvote() {
     let vote = this.userVote == -1 ? 0 : -1;
     this.voteCount = this.voteCount + vote;
     console.log(vote);
-    this.upvoteService.updateUserVote(this.votes, this.userId, vote);
+    this.upvoteService.updateUserVote(this.votes, this.messageId, vote);
   }
 
   ngOnDestroy() {

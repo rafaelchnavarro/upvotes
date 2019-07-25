@@ -61,7 +61,6 @@ public class UpvotesServiceImpl implements UpvotesService {
             .map(upvotesMapper::toDto);
     }
 
-
     /**
      * Get one upvotes by id.
      *
