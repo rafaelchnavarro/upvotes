@@ -16,7 +16,6 @@ public class UpvotesDTO implements Serializable {
     @Size(min = 1, max = 250)
     private String message;
 
-    @Length(min = 1, max = 99999)
     private Integer vote;
 
     public Long getId() {

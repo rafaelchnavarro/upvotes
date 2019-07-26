@@ -20,6 +20,7 @@ export class UpvotesService {
   }
 
   update(upvotes: IUpvotes): Observable<EntityResponseType> {
+    debugger;
     return this.http.put<IUpvotes>(this.resourceUrl, upvotes, { observe: 'response' });
   }
 
