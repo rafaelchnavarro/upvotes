@@ -29,16 +29,16 @@ export class UpvoteButtonComponent implements OnInit, OnDestroy {
     let vote = this.userVote == 1 ? 0 : 1;
     this.voteCount = this.voteCount + vote;
     debugger;
-    this.subscribeToSaveResponse(this.upvotesService.update({ id: this.messageId, message: '', vote: this.voteCount }));
+    this.subscribeToSaveResponse(this.upvotesService.vote(this.messageId, this.voteCount));
 
-    this.upvoteService.updateUserVote(this.votes, this.messageId, this.voteCount);
+    //this.upvoteService.updateUserVote(this.votes, this.messageId, this.voteCount);
   }
 
   downvote() {
     let vote = this.userVote == -1 ? 0 : -1;
     this.voteCount = this.voteCount + vote;
-    console.log(vote);
-    this.upvoteService.updateUserVote(this.votes, this.messageId, vote);
+
+    this.subscribeToSaveResponse(this.upvotesService.vote(this.messageId, this.voteCount));
   }
 
   protected subscribeToSaveResponse(result: Observable<HttpResponse<IUpvotes>>) {

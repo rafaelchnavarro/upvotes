@@ -24,6 +24,12 @@ export class UpvotesService {
     return this.http.put<IUpvotes>(this.resourceUrl, upvotes, { observe: 'response' });
   }
 
+  vote(messageId: number, votes: number): Observable<EntityResponseType> {
+    return this.http.post<IUpvotes>(this.resourceUrl + '/vote' + '?messageId=' + messageId + '&vote=' + votes, null, {
+      observe: 'response'
+    });
+  }
+
   find(id: number): Observable<EntityResponseType> {
     return this.http.get<IUpvotes>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }

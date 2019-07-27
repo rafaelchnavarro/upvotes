@@ -86,6 +86,24 @@ public class UpvotesResource {
             .body(result);
     }
 
+    @PostMapping("/upvotes/vote")
+    public ResponseEntity<UpvotesDTO> vote(@RequestParam Long messageId, @RequestParam Integer vote) throws URISyntaxException {
+        log.debug("REST request to votes : {}", messageId);
+        if (messageId == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+
+        Optional<UpvotesDTO> optional = upvotesService.findOne(messageId);
+        UpvotesDTO upvotesDTO = optional.get();
+
+        upvotesDTO.setVote(vote);
+
+        UpvotesDTO result = upvotesService.save(upvotesDTO);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, upvotesDTO.getId().toString()))
+            .body(result);
+    }
+
     /**
      * {@code GET  /upvotes} : get all the upvotes.
      *
